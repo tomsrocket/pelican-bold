@@ -12,17 +12,23 @@
         </ul>
         {{ article.locale_date }}
         {% if article.author %}
-        <address>
+        <!-- address>
             <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-        </address>
+        </address-->
         {% endif %}
 
-        {% if article.tags %}<ul class="tags"><lh>tags:</lh>{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>{% endfor %}</ul>{% endif %}
+        {% if article.tags and (article.tags|length > 1) %}<ul class="tags"><lh>tags:</lh>{% for tag in article.tags %}<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>{% endfor %}</ul>{% endif %}
         {% if PDF_PROCESSOR %}<p><a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">get the pdf</a></p>{% endif %}
     </footer>
 
     <div class="content">
+
         {{ article.content }}
+
+        Link: <a href="{{ article.external }}">{{ article.external }}</a>
+        <br /><br />
+        {% if article.cover %}<a href="{{ article.external }}"><img src="{{ article.cover }}" alt=""></a>{% endif %}
+
     </div><!-- /.entry-content -->
 
     {% if DISQUS_SITENAME %}

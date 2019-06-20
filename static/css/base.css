@@ -79,6 +79,17 @@ article > footer > div.social {
     margin-bottom: 10px;
 }
 
+/* Pattern styles */
+.c-ha {
+    display: grid;
+}
+.left-half {
+    grid-column: 1;
+}
+.right-half {
+    grid-column: 2;
+}
+
 .stamp {
     background-color: #000;
     color: #fff;
@@ -100,6 +111,9 @@ article > div.content { margin: 0 15px; }
 article > footer { font-size: 0.8em; margin: 20px 15px; color: #666; }
 article h2 { margin: 5px 0; }
 article > div.content { margin-bottom: 20px; }
+img.cover {
+    height: 100px;float:right;
+}
 
 p.paginator { text-align: right; }
 
